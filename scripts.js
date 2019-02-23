@@ -1,16 +1,17 @@
 function mathfact() {
-        var num = document.getElementById("num").value;
-        window.alert(num);
-        window.alert('http://numbersapi.com/'+num+'/math?notfound=floor&fragment');
-        $.get('http://numbersapi.com/'+num+'/math?notfound=floor&fragment', function(data) {
-         $('#number').text(data);
-        });      
-      }
+  var num = document.getElementById("num").value;
+  window.alert(num);
+  window.alert('http://numbersapi.com/' + num + '/math?notfound=floor&fragment');
+  $.get('http://numbersapi.com/' + num + '/math?notfound=floor&fragment', function (data) {
+    $('#number').text(data);
+  });
+}
+
 function randomfact() {
-        $.get('http://numbersapi.com/random/trivia', function(data) {
-         $('#number').text(data);
-        });      
-      }
+  $.get('http://numbersapi.com/random/trivia', function (data) {
+    $('#number').text(data);
+  });
+}
 
 
 
@@ -18,11 +19,16 @@ function randomfact() {
  * Code for Bing Web Search API
  * Author egyptianf
  */
-function bingSearch(){
-	var url='http://api.openweathermap.org/data/2.5/weather?q=London&APPID=70c238bc7688af78c117e3f64df92ba7';
-	$.getJSON(url, function(result){
-		console.log("hhaha");
-		console.log(result);
-		$('.parag1').append(result.coord.lon);	
-	});
+var url = 'http://api.openweathermap.org/data/2.5/weather?q=London&APPID=70c238bc7688af78c117e3f64df92ba7';
+
+//This only works in debugging mode! I can't figure out why!!
+function bingSearch() {
+  alert('We have stepped inside BingSearch().');
+  $.getJSON(url, function (result) {
+    $(".parag1").append(result.coord.lon);
+    console.log("hhaha");
+    console.log(result);
+
+
+  });
 }
