@@ -22,6 +22,7 @@ function randomfact() {
 var url = 'http://api.openweathermap.org/data/2.5/weather?q=London&APPID=70c238bc7688af78c117e3f64df92ba7';
 
 //This only works in debugging mode! I can't figure out why!!
+//Update: For God's Sake! There was a form in HTML that when I removed the code just worked!
 function bingSearch() {
   alert('We have stepped inside BingSearch().');
   $.getJSON(url, function (result) {
