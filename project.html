@@ -5,25 +5,35 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Numfacts</title>
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script src="scripts.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
 	<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-	<input type="text" id="num">
-	<button onclick="mathfact();">get a fact about number</button>
-	<button onclick="randomfact();">get random number fact</button>
-	<button onclick="bingSearch();">Search on Bing</button>
-	<p class="parag1">This is going to change.</p>
-	</br></br></br>
 
-
-
-
-
-	<span id="number"></span>!
+	<div class="body container-fluid">
+		<div class="container lx">
+			<div class="row justify-content-center align-middle mt-3">
+				<div class="col text-center">
+					<h1>Did you know?</h1>
+				</div>
+			</div>
+			<div class="row justify-content-center align-middle mt-3">
+				<span id="number" class="text-center"></span>
+			</div>
+			<div class="row justify-content-center align-middle mt-5">
+				<input class="text-center" type="text" id="num" value="1" style="width:100%;">
+			</div>
+			<div class="row justify-content-center align-middle mt-5">
+				<button class="mr-3" onclick="mathfact();">get a fact about number</button>
+				<button class="ml-3" onclick="randomfact();">get random number fact</button>
+				<script src="scripts.js"></script>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
