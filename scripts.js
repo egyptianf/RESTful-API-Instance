@@ -11,3 +11,18 @@ function randomfact() {
          $('#number').text(data);
         });      
       }
+
+
+
+/*
+ * Code for Bing Web Search API
+ * Author egyptianf
+ */
+function bingSearch(){
+	var url='http://api.openweathermap.org/data/2.5/weather?q=London&APPID=70c238bc7688af78c117e3f64df92ba7';
+	$.getJSON(url, function(result){
+		console.log("hhaha");
+		console.log(result);
+		$('.parag1').append(result.coord.lon);	
+	});
+}
