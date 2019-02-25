@@ -34,17 +34,8 @@ function bingSearch() {
   var apiQuery = realurl + "&key=" + key + "&cx=" + customSearchEngine + "&q=" + fact;
 
   $.get(apiQuery, function (result) {
-    alert('This is your first result: ' + result.items[0].link);
     $('#number').text(result.items[0].link);
-    $('#number').append(result.items[0].link);
-    //location.href = result.items[0].link;
+    location.href = result.items[0].link;
   }, 'json');
 
-  /*   $.getJSON(apiQuery, function (result) {
-      $('#number').append(result.items[0].link);
-      console.log("hhaha");
-      console.log(result);
-  
-  
-    }); */
 }
