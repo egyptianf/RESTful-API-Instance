@@ -1,6 +1,6 @@
 var fact; //Produced from Numbers API and passed to Web Search API
 var searchResult; //Produced from Web Search API to FB API
-var linkTag = '<a href="javascript:bingSearch()"> Get a result!</a>';
+var linkTag = '<br/><a href="javascript:bingSearch()"> Get a result!</a>';
 /*
  * Code for Numbers API
  * Author: MlHisham
