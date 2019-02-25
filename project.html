@@ -46,7 +46,7 @@
 		}(document, 'script', 'facebook-jssdk'));
 
 
-
+		var loginFlag = false;
 		function login() {
 			FB.login(function (response) {
 				if (response.status === 'connected') {
@@ -58,14 +58,20 @@
 					document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
 				}
 			}, { scope: 'publish_actions' });
+			loginFlag = true;
 		}
 
-
+		//Permission here is still not granted. A FB problem.
 		function post() {
-			FB.api('/me/feed', 'post', { message: searchResult }, function (response) {
-				document.getElementById('status').innerHTML = response.id;
-			});
+			if (loginFlag == true) {
+				FB.api('/me/feed', 'post', { message: searchResult }, function (response) {
+					document.getElementById('status').innerHTML = response.id;
+				});
+			} else {
+				alert("Sorry! You must login first before you post!");
+			}
 		}
+
 	</script>
 	<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
