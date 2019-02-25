@@ -36,7 +36,6 @@ function bingSearch() {
   var apiQuery = realurl + "&key=" + key + "&cx=" + customSearchEngine + "&q=" + fact;
 
   $.get(apiQuery, function (result) {
-    $('#number').text(result.items[0].link);
     location.href = result.items[0].link;
     searchResult = result.items[0].link;
   }, 'json');
