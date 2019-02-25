@@ -26,18 +26,15 @@ function randomfact() {
 //This only works in debugging mode! I can't figure out why!!
 //Update: For God's Sake! There was a form in HTML that when I removed the code just worked!
 function bingSearch() {
-  alert('We have stepped inside BingSearch().');
   var realurl = 'https://www.googleapis.com/customsearch/v1?';
   var key = 'AIzaSyDmptAWny2K5sffaNe5jKts2DF6ZgTBs2g';
   var customSearchEngine = '017505848282137967180:eexzoloxdao';
   var apiQuery = realurl + "&key=" + key + "&cx=" + customSearchEngine + "&q=" + fact;
 
-  var searchResult;
-
   $.get(apiQuery, function (result) {
-    searchResult = result.items[0].link;
     $('#number').text(result.items[0].link);
     $('#number').append(result.items[0].link);
+    //location.href = result.items[0].link;
   }, 'json');
 
   /*   $.getJSON(realurl, function (result) {
@@ -47,5 +44,4 @@ function bingSearch() {
 
 
     });*/
-  return searchResult;
 }
