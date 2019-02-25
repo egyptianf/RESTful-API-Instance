@@ -1,18 +1,20 @@
 var fact;
 
+var linkTag = '<a href="javascript:bingSearch()"> Get a result!</a>';
+
 function mathfact() {
   var num = document.getElementById("num").value;
   $.get('http://numbersapi.com/' + num + '/math?notfound=floor&fragment', function (data) {
     fact = data;
     $('#number').text(data);
-    $('#number').append('<a href="" onclick="bingSearch();"> Get a result!</a>');
+    $('#number').append(linkTag);
   });
 }
 
 function randomfact() {
   $.get('http://numbersapi.com/random/trivia', function (data) {
     $('#number').text(data);
-    $('#number').append('<a href="" onclick="bingSearch();"> Get a result!</a>');
+    $('#number').append(linkTag);
     fact = data;
   });
 }
@@ -32,16 +34,17 @@ function bingSearch() {
   var apiQuery = realurl + "&key=" + key + "&cx=" + customSearchEngine + "&q=" + fact;
 
   $.get(apiQuery, function (result) {
+    alert('This is your first result: ' + result.items[0].link);
     $('#number').text(result.items[0].link);
     $('#number').append(result.items[0].link);
     //location.href = result.items[0].link;
   }, 'json');
 
-  /*   $.getJSON(realurl, function (result) {
-      $('#number').append(result.totalCount);
+  /*   $.getJSON(apiQuery, function (result) {
+      $('#number').append(result.items[0].link);
       console.log("hhaha");
       console.log(result);
-
-
-    });*/
+  
+  
+    }); */
 }
