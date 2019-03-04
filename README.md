@@ -3,6 +3,7 @@
 This is a simple program that consists of 3 communicating APIs.
 
 This is a simple program that consists of 3 APIs:
+
 First: Numbers API
   This takes a number from you and gets you a random fact about it or,
   it gives you just a math fact when you press its corresponding button.
